@@ -11,10 +11,14 @@ docker rm nginx-cont
 docker build -t nginx-server ./nginx
 
 #Создаем и запускаем контейнер
-docker run -d --name nginx-cont -p 54321:80 --restart unless-stopped nginx-server
+docker run -d --name nginx-cont -p 54321:80 -p 54322:443 -v $(pwd)/ssl:/etc/ssl:ro  --restart unless-stopped nginx-server
 
-sleep 15
+sleep 5
 # Проверяем
+
 docker ps -a 
+sleep 5
 curl 127.0.0.1:54321 
+sleep 5
+curl -k https://127.0.0.1:54322
 docker logs -n 10 nginx-cont
