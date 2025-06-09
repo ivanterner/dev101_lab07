@@ -183,7 +183,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 
 
-Тестовая сборка и проверка 
+Сборка и проверка 
 ```bash
 ./deploy.sh                                                                                                                                        1 ↵ ──(Mon,Jun09)─┘
 Error response from daemon: No such container: nginx-cont
@@ -250,11 +250,10 @@ DevOps Course 2025!
 2025/06/09 17:07:28 [notice] 1#1: start worker process 28
 172.17.0.1 - - [09/Jun/2025:17:07:38 +0000] "GET / HTTP/1.1" 200 115 "-" "curl/8.5.0" "-"
 172.17.0.1 - - [09/Jun/2025:17:07:43 +0000] "GET / HTTP/1.1" 200 115 "-" "curl/8.5.0" "-"
-
-
 ```
 
 
+Скрипт обновления сертифика
 ```bash
 #!/bin/bash
 echo "Время выпуска сертификата до обновления"
